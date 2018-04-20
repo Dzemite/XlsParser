@@ -1,0 +1,103 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "id": "http://link.to.github",
+    "title": "TehLab Forms bug report service schema",
+    "type": "object",
+    "properties": {
+        "$schema": {
+            "type": "string"
+        },
+        "port": {
+            "type": "number"
+        },
+        "authConfig": {
+            "type": "object",
+            "properties": {
+            "authLogin": {
+                "type": "string"
+            },
+            "authPassword": {
+                "type": "string"
+            }
+            }
+        },
+        "authUrl": {
+            "type": "string"
+        },
+        "jiraAuthConfig": {
+            "type": "object",
+            "properties": {
+                "login": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+            }
+        },
+        "defaultJiraConfig": {
+            "type": "object",
+            "properties": {
+                "update": {
+                    "type": "object"
+                },
+                "fields": {
+                    "type": "object",
+                    "properties": {
+                        "project": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string" 
+                                }
+                            }
+                        },
+                        "summary": {
+                            "type": "string"
+                        },
+                        "issuetype": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "priority": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "labels": {
+                            "type": "array"
+                        },
+                        "description": {
+                            "type": "string"
+                        },
+                        "fixVersions": {
+                            "type": "array"
+                        },
+                        "components": {
+                            "type": "array"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "required": [
+        "port",
+        "authConfig",
+        "authUrl",
+        "defaultJiraConfig",
+        "jiraAuthConfig"
+    ],
+    "additionalProperties": false
+  }
+  
